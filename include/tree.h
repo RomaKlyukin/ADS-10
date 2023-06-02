@@ -14,9 +14,9 @@ class Tree {
  private:
   Node* root;
   Node* addNode(Node*, std::vector<char>, char, std::vector<char>);
-     
+
  public:
-  Tree(std::vector<char>);
+  explicit Tree(std::vector<char>);
 };
 Tree :: Tree(std::vector<char> val) {
   std::vector<char> ps;
@@ -24,9 +24,10 @@ Tree :: Tree(std::vector<char> val) {
   root->value = '*';
   root->child.resize(val.size(), nullptr);
   for (auto i = 0; i < root->child.size(); i++)
-    root->child[i]=addNode(root->child[i], val, val[i], ps);
+    root->child[i] = addNode(root->child[i], val, val[i], ps);
 }
-Tree :: Node* Tree :: addNode(Node* node, std::vector<char> vec, char vNode, std::vector<char> ps) {
+Tree :: Node* Tree :: addNode(Node* node,
+                              std::vector<char> vec, char vNode, std::vector<char> ps) {
   std::vector<char> vec_1;
   for (auto y = 0; y < vec.size(); y++) {
     if (vec[y] != vNode)
