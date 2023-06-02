@@ -7,8 +7,8 @@
 
 std::vector<char> getPerm(const Tree& tree, int n) {
   std::vector<char> nullvc;
-  if (num > tree.list.size())
+  if (n > tree.list.size())
     return nullvc;
   else
-    return tree.list[num - 1];
+    return tree.list[n - 1];
 }
